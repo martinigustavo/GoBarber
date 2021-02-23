@@ -111,7 +111,6 @@ dist
 .env.production.local
 
 # dependencies
-/node_modules
 /.pnp
 .pnp.js
 
