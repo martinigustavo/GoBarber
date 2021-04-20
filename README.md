@@ -33,7 +33,7 @@ Já o prestador de serviço, através de um interface Web, consegue ter acesso a
 ## :gear: Iniciando back-end
 ```bash
   # Entrar no diretório do back-end:
-  $ cd backend
+  $ cd gobarber-backend
 
   # Instalar as dependências:
   $ yarn
@@ -48,7 +48,7 @@ Já o prestador de serviço, através de um interface Web, consegue ter acesso a
 ## :computer: Iniciando front-end
 ```bash
   # Entrar no diretório do front-end:
-  $ cd frontend
+  $ cd gobarber-web
 
   # Instalar as dependências:
   $ yarn
@@ -60,7 +60,7 @@ Já o prestador de serviço, através de um interface Web, consegue ter acesso a
 ## :iphone: Iniciando mobile
 ```bash
   # Entrar no diretório do mobile:
-  $ cd mobile
+  $ cd appgobarber
 
   # Instalar as dependências:
   $ yarn
