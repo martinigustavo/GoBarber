@@ -1,71 +1,53 @@
-# MAPEAMENTO DAS FEATURES DO SISTEMA
+<p align="center">
+    <img width="300" align="center" src=".github/gostack.svg">
+</p>
 
-# Recuperação de senha
+<h1 align="center">
+    GoBarber API
+</h1>
 
-**RF** (requesitos funcionais)
+<h3 align="center">
+Plataforma de agendamento e gerenciamento para barbearias
+</h3>
 
-- O usuário deve poder recuperar sua senha informando o seu e-mail;
-- O usuário deve receber um e-mail com instruções de recuperação de senha;
-- O usuário deve poder resetar sua senha;
+## :rocket: Sobre o projeto
 
-**RNF** (requesitos não funcionais)
+<p>
+Esta é uma plataforma completa onde o cliente pode visualizar a agenda de barbeiros e agendar um horário,
+e para barbeiros, permite gerenciar os horários marcados.
+</p>
+<p>
+Este repositório contém a API REST que faz todo o CRUD da aplicação, persistência de dados, tratativa de exceções e que serve dados tanto ao projeto front-end quanto ao projeto mobile.
+</p>
 
-- Utilizar Mailtrap para testar envios em ambiente de dev;
-- Utilizar o Amazon SES para envios em produção;
-- O envio de e-mails deve acontecer em segundo plano (background job);
+## :computer: Tecnologias
 
-**RN** (requesitos de negócio)
+- [Node.js](https://nodejs.org/en/)
+- [Express](https://expressjs.com/pt-br/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Jest](https://jestjs.io/)
+- [PostgreSQL](https://www.postgresql.org/)
+- [Mongodb](https://www.mongodb.com/)
 
-- O link enviado por e-mail para resetar a senha deve expirar em 2h;
-- O usuário precisa confirmar a nova senha;
+## :books: Guia de instalação e execução
 
-# Atualização do perfil
+### Pré-requisitos
 
-**RF**
+## :books: Requisitos
 
-- O usuário deve poder atualizar seu perfil (nome, email e senha);
+- Ter [**Git**](https://git-scm.com/) para clonar o projeto.
+- Ter [**Node.js**](https://nodejs.org/en/) instalado.
+- Ter [**Docker**](https://www.docker.com/) rodando um container PostgreSQL.
 
-**RN**
+### Como executar
 
-- O usuário não pode alterar seu e-mail para um e-mail já utilizado;
-- Para atualizar sua senha, o usuário deve informar a senha antiga;
-- Para atualizar sua senha, o usuário precisa confirmar a nova senha;
+- Clone o repositório `git clone https://github.com/martinigustavo/GoBarberAPI`
+- Vá até o diretório `cd gostack-gobarber-server`
+- Execute `yarn` para instalar as dependências
+- Copie o arquivo .env.example executando `cp .env.example .env` para linux ou mac e `copy .env.example .env` para windows
+- Abra o arquivo .env e preencha com suas variáveis de ambiente
+- Abra o arquivo ormconfig.json e verifique as informações para criar os bancos de dados ou troque conforme as suas configurações
+- Execute `yarn typeorm migration:run` para rodar as migrations
+- Execute `yarn dev:server` para rodar o servidor
 
-# Painel do prestador
-
-**RF**
-
-- O usuário deve poder listar seus agendamentos de um dia específico;
-- O prestador deve receber uma notificação sempre que houver um novo agendamento;
-- O prestador deve poder visualizar as notificações não lidas;
-
-**RNF**
-
-- Os agendamentos do prestador no dia devem ser armazenados em cache;
-- As notificações do prestador devem ser armazenadas no MongoDB;
-- As notificações do prestador devem ser enviadas em tempo-real utilizando o Socket.io;
-
-**RN**
-
-- A notificação deve ter um status de lida ou não-lida para que o prestador possa controlar;
-
-# Agendamento de serviços
-
-**RF**
-
-- O usuário deve poder listar todos prestadores de serviço cadastrados;
-- O usuário deve poder listar os dias de um mês com pelo menos um horário disponível de um prestador;
-- O usuário deve poder listar os horários disponíveis em um dia de um prestador;
-- O usuário deve poder realizar um novo agendamento com um prestador;
-
-**RNF**
-
-- A listagem de prestadores deve ser armazenada em cache;
-
-**RN**
-
-- Cada agendamento deve durar 1h extamente;
-- Os agendamentos devem estar disponíveis entre as 8h as 18h (primeiro as 8h, último as 17h);
-- O usuário não pode agendar um horário já ocupado;
-- O usuário não pode agendar um horário que já passou;
-- O usuário não pode agendar serviços consigo mesmo;
+Caso deseje executar os testes unitários e de integração basta executar `yarn test` em seu terminal. Você poderá ver um relatório da cobertura acessando o arquivo `coverage/lcov-report/index.html`.
