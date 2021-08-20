@@ -1,72 +1,53 @@
+<p align="center">
+    <img width="300" align="center" src=".github/gostack.svg">
+</p>
+
 <h1 align="center">
-    <img alt="Gobarber" src="https://ik.imagekit.io/hwyksvj4iv/gobarber_19xmN2BUU.svg" width="250px" />
+    GoBarber API
 </h1>
 
-## :page_with_curl: Sobre
-Este repositório contém um API REST em Node.js como back-end, uma aplicação em ReactJS como front-end e um app mobile em React Native, todos utilizando TypeScript.
+<h3 align="center">
+Plataforma de agendamento e gerenciamento para barbearias
+</h3>
 
-Essa é a aplicação GoBarber, que é uma plataforma de agendamento de serviços para proprietários de barbearias ou salões de beleza. Nessa aplicação o usuário consegue ter acesso a todos os prostadores de serviços cadastrados através de um aplicativo mobile, com isso usuário consegue escolher um prestador para marcar seu agendamento.
+## :rocket: Sobre o projeto
 
-Já o prestador de serviço, através de um interface Web, consegue ter acesso a todos os seus horários, podendo ver todos os que estão ocupados quanto os que estão disponíveis.
+<p>
+Esta é uma plataforma completa onde o cliente pode visualizar a agenda de barbeiros e agendar um horário,
+e para barbeiros, permite gerenciar os horários marcados.
+</p>
+<p>
+Este repositório contém a API REST que faz todo o CRUD da aplicação, persistência de dados, tratativa de exceções e que serve dados tanto ao projeto front-end quanto ao projeto mobile.
+</p>
 
-**Node.js**: é uma API REST que faz todo o CRUD da aplicação, persistência de dados, tratativa de exceções e que serve dados tanto ao front-end quanto ao mobile.
+## :computer: Tecnologias
 
-**ReactJS**: é uma página Web no qual o prestador de serviço tem acesso a todo o seu calendário de agendamentos.
+- [Node.js](https://nodejs.org/en/)
+- [Express](https://expressjs.com/pt-br/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Jest](https://jestjs.io/)
+- [PostgreSQL](https://www.postgresql.org/)
+- [Mongodb](https://www.mongodb.com/)
 
-**React Native**: é um aplicativo em que o usuário tem acesso a todos os prestadores de serviço cadastrados no App, com isso ele pode fazer um agendamento que o prestador de preferência.
+## :books: Guia de instalação e execução
+
+### Pré-requisitos
 
 ## :books: Requisitos
+
 - Ter [**Git**](https://git-scm.com/) para clonar o projeto.
 - Ter [**Node.js**](https://nodejs.org/en/) instalado.
 - Ter [**Docker**](https://www.docker.com/) rodando um container PostgreSQL.
-- Um dispositivo ou emulador iOS ou Android
 
-## :rocket: Começando
-``` bash
-  # Clonar o projeto:
-  $ git clone https://github.com/martinigustavo/GoBarber
+### Como executar
 
-  # Entrar no diretório:
-  $ cd gobarber
-```
+- Clone o repositório `git clone https://github.com/martinigustavo/GoBarberAPI`
+- Vá até o diretório `cd gostack-gobarber-server`
+- Execute `yarn` para instalar as dependências
+- Copie o arquivo .env.example executando `cp .env.example .env` para linux ou mac e `copy .env.example .env` para windows
+- Abra o arquivo .env e preencha com suas variáveis de ambiente
+- Abra o arquivo ormconfig.json e verifique as informações para criar os bancos de dados ou troque conforme as suas configurações
+- Execute `yarn typeorm migration:run` para rodar as migrations
+- Execute `yarn dev:server` para rodar o servidor
 
-## :gear: Iniciando back-end
-```bash
-  # Entrar no diretório do back-end:
-  $ cd gobarber-backend
-
-  # Instalar as dependências:
-  $ yarn
-
-  # Rodar as migrations:
-  $ yarn typeorm migration:run
-
-  # Rodar a aplicação:
-  $ yarn dev:server
-```
-
-## :computer: Iniciando front-end
-```bash
-  # Entrar no diretório do front-end:
-  $ cd gobarber-web
-
-  # Instalar as dependências:
-  $ yarn
-
-  # Rodar a aplicação:
-  $ yarn start
-```
-
-## :iphone: Iniciando mobile
-```bash
-  # Entrar no diretório do mobile:
-  $ cd appgobarber
-
-  # Instalar as dependências:
-  $ yarn
-
-  # Rodar a aplicação:
-  $ yarn ios ou yarn android 
-```
-
-Feito com ❤️ por Gustavo Martini 👋🏻 [Get in touch!](https://github.com/martinigustavo)
+Caso deseje executar os testes unitários e de integração basta executar `yarn test` em seu terminal. Você poderá ver um relatório da cobertura acessando o arquivo `coverage/lcov-report/index.html`.
